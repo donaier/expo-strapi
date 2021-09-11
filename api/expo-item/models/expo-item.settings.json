@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "expo_items",
+  "info": {
+    "name": "expoItem",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "happend_at": {
+      "type": "date",
+      "required": true
+    },
+    "flavour_color": {
+      "type": "string",
+      "regex": "^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$",
+      "required": false
+    },
+    "banner": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "intro": {
+      "type": "richtext",
+      "required": true
+    },
+    "distance": {
+      "type": "string",
+      "required": true
+    },
+    "elevation_gain": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "ride_url": {
+      "type": "string",
+      "required": true,
+      "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "content.content-image",
+        "content.content-text"
+      ]
+    }
+  }
+}
