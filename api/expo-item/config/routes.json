@@ -18,8 +18,8 @@
     },
     {
       "method": "GET",
-      "path": "/expo-items/:id",
-      "handler": "expo-item.findOne",
+      "path": "/expo-items/:handle",
+      "handler": "expo-item.findOneByHandle",
       "config": {
         "policies": []
       }
